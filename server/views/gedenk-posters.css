@@ -158,6 +158,24 @@
   justify-content: center;
 }
 
+.bloem-container button {
+  background: none; /* Geen achtergrondkleur */
+  border: none; /* Geen rand */
+  padding: 0; /* Geen padding */
+  cursor: pointer; /* Zorg ervoor dat het klikbaar blijft */
+}
+
+.bloem-container button:hover {
+  background: none; /* Geen hover-achtergrondkleur */
+  border: none; /* Geen hover-rand */
+}
+
+.bloem-container button:active {
+  background: none; /* Geen actieve achtergrondkleur */
+  border: none; /* Geen actieve rand */
+  outline: none; /* Geen focus-outline */
+}
+
 .bloem-lijst {
   position: absolute;
   bottom: 4rem;

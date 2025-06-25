@@ -1,0 +1,33 @@
+{% layout "server/layouts/base.liquid" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/styles/families.css">
+{% endblock %}
+
+{% block content %}
+<section class="families-per-straat">
+  {% for groep in straatgroepen %}
+    <div class="straat-groep">
+      <h2 class="straat-titel">{{ groep.straat }}</h2>
+
+      <div class="familie-lijst">
+        {% for familie in groep.families %}
+          <div class="familie-kaart">
+            <div class="familie-illustratie">
+                <img src="/images/gedenkmuur/ilustratie-gezinnen.png" alt="">
+            </div>
+            <div class="familie-info">
+              <h3>Familie {{ familie.naam }}</h3>
+              <a href="/verhalen/{{ familie.id }}" class="familie-link">Bekijk verhaal</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
+
+
+
+

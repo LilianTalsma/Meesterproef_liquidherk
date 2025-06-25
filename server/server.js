@@ -137,4 +137,36 @@ app.get('/over-ons', async (req, res) => {
   }));
 });
 
-/* Header pages */
+
+
+app.get('/families', async (req, res) => {
+  const straatMap = new Map();
+
+  testData.forEach(item => {
+    const straat = item.verhaal.straat;
+    const familie = {
+      naam: item.verhaal.familie,
+      id: item.verhaal.id,
+    };
+
+    if (!straatMap.has(straat)) {
+      straatMap.set(straat, []);
+    }
+
+    // Voorkom dubbele families in dezelfde straat
+    if (!straatMap.get(straat).some(f => f.naam === familie.naam)) {
+      straatMap.get(straat).push(familie);
+    }
+  });
+
+  // Zet om naar array: [{ straat: "Oosterpark", families: [...] }, ...]
+  const straatgroepen = Array.from(straatMap.entries()).map(([straat, families]) => ({
+    straat,
+    families,
+  }));
+
+  return res.send(renderTemplate('server/views/families.liquid', {
+    title: 'Families per straat',
+    straatgroepen
+  }));
+});
