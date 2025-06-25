@@ -23,6 +23,30 @@ body{
     z-index:1;
     text-align: center;
   }
+
+  .terug-knop-container {
+    padding: 2rem 1rem 0;
+    display: flex;
+    justify-content: flex-start; /* ✅ Zorgt dat de knop naar links gaat */
+  }
+  
+  .terug-knop {
+    background-color: var(--main-blauw);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .terug-knop:hover {
+    background-color: #004080;
+    color:var(--secundary-color);
+  }
+  
+  
   
   
   .streetName{
@@ -249,6 +273,9 @@ body{
     font-family: 'Open Sans', sans-serif;
   
   }
+
+
+  
   
   
  
