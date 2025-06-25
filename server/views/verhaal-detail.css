@@ -95,7 +95,7 @@ body{
     position: absolute;
     z-index: 0; /* Zorg dat de bomen achter de huisjes staan */
     width: 20vw; /* Gebruik viewport breedte voor grootte */
-    opacity: 0.8; /* Maak de boom iets transparant */
+    opacity: 0.9; /* Maak de boom iets transparant */
   }
   
   .tree2 {
@@ -113,7 +113,7 @@ body{
     position: absolute;
     z-index: 0;
     width: 20vw;
-    opacity: 0.8;
+    opacity: 0.9;
   }
   
   .tree4 {
@@ -134,7 +134,7 @@ body{
   position: relative;
   display: flex;
   flex-wrap: nowrap; /* Prevent wrapping */
-  gap: 1em;
+  gap: .1em;
   justify-content: center;
   overflow-x: hidden; /* Allow horizontal scroll if screen is too small */
   z-index: 1;
@@ -144,7 +144,7 @@ body{
 .housjesContainer img {
   flex: 1 1 auto;
   width: 10%; /* Adjust this based on how many images you want visible */
-  max-width: 100px; /* Optional: limit the max size */
+  max-width: 125px; /* Optional: limit the max size */
   height: auto;
   transition: transform 0.1s ease-out;
 }

@@ -115,78 +115,7 @@ ul.grid {
 
 
     /* Styling */
-    .peopleList {
-        background: var(--black);
-        color: var(--white);
-     
-        padding: 2rem;
-        border-radius: 1rem;
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
-        >* {
-            color: var(--white);
-           
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .people {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(1rem, 1fr));
-            margin: 0;
-            padding: 0;
-            gap: 0.5rem;
-
-            li {
-                list-style-type: none;
-                opacity: 0;
-                animation: grow-progress 2s linear forwards;
-                color: var(--white);
-            }
-        }
-    }
-
-    .imageLeft,
-    .imageRight {
-        img {
-            width: 100%;
-            height: auto;
-            
-        }
-    }
-
-    /* Vanaf 992px en groter (Tablet etc.) */
-    @media screen and (min-width: 992px) {
-        grid-template-columns: 1fr 1fr 1fr;
-
-        .info {
-            grid-column: 1 / span 2;
-            grid-row: 1;
-        }
-
-        .peopleList {
-            grid-column: 3;
-            grid-row: 1 / span 2;
-        }
-
-        .imageLeft {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        .imageRight {
-            grid-column: 2;
-            grid-row: 2;
-        }
-    }
-}
-
+   
 /* 4 Mei */
 .banner {
     margin: -1rem;
@@ -263,3 +192,60 @@ ul.grid {
 }
 
 /* Gedenkmuur */
+
+ .peopleCounterContainer {
+        background: #f6f1ed;
+        color: var(--black);
+        padding: 3rem 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+      .peopleCounterContainer h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+      
+      .impact-tekst {
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
+      
+      
+
+    .imageLeft,
+    .imageRight {
+        img {
+            width: 100%;
+            height: auto;
+            
+        }
+    }
+
+    /* Vanaf 992px en groter (Tablet etc.) */
+    @media screen and (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .info {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+
+        .peopleList {
+            grid-column: 3;
+            grid-row: 1 / span 2;
+        }
+
+        .imageLeft {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .imageRight {
+            grid-column: 2;
+            grid-row: 2;
+        }
+    }
+}
