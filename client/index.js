@@ -19,16 +19,20 @@ if (mobileMenuLink) {
 }
 
 /* Homepage mensen animatie */
-const peopleList = document.querySelector('.people');
-const peopleCount = 933;
+const counterSpan = document.querySelector(".people-counter");
+const targetNumber = 2800;
+const duration = 2000; // duur in milliseconden
 
-if (peopleList) {
-  for (let i = 0; i < peopleCount; i++) {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `<i class="fa-solid fa-users"></i>`;
-    listItem.style.animationDelay = `${i / 4}s`;
-    peopleList.appendChild(listItem);
-  }
+if (counterSpan) {
+  let start = 0;
+  const stepTime = Math.floor(duration / targetNumber);
+  const timer = setInterval(() => {
+    start++;
+    counterSpan.textContent = start.toLocaleString(); // mooi getal met komma's
+    if (start >= targetNumber) {
+      clearInterval(timer);
+    }
+  }, stepTime);
 }
 
 const bloemList = document.querySelector('.bloem-lijst');
@@ -242,4 +246,20 @@ if (straatSelect) {
     });
   });
 }
+
+document.getElementById('zoek-knop').addEventListener('click', function () {
+  const zoekterm = document.getElementById('naam-zoek-input').value.toLowerCase();
+
+  document.querySelectorAll('.familie-kaart').forEach(function (kaart) {
+    const naamElement = kaart.querySelector('h3');
+    const naam = naamElement ? naamElement.textContent.toLowerCase() : '';
+
+    if (!zoekterm || naam.includes(zoekterm)) {
+      kaart.style.display = '';
+    } else {
+      kaart.style.display = 'none';
+    }
+  });
+});
+
 

@@ -36,7 +36,7 @@ ul.grid {
 
     h1 {
         color: var(--black);
-        font-size: clamp(2rem, 10vw, 7rem);
+        font-size: clamp(2rem, 6vw, 7rem);
         position: relative;
         z-index: 2;
         display: flex;
@@ -44,208 +44,82 @@ ul.grid {
         line-height: 1;
 
         span.red {
-            color: #8b2300;
+            color: var(--link-color);
         }
     }
 }
 
 .homepageContent {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-    grid-template-rows: auto 1fr;
-
-    >* {
-        padding: 1rem 2rem;
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 0;
-        }
-
-        h2{
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        p{
-            font-size: 1.1rem;
-            line-height: 1.6;
-
-        };
-    }
-
-    /* Positionering */
-    .info {
-        grid-column: 1;
-    }
-
-    .peopleList {
-        grid-column: 1;
-        grid-row: 4;
-    }
-
-    .imageLeft {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .imageRight {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .info {
-        background: var(--white);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        background: #f6f1ed;
-        padding: 2rem;
-        border-radius: 1rem;
-
-       h3 {
-        font-size: 2rem;
-        color: var(--link-color);
-        margin-bottom: 1rem;
-       } 
-    }
-
-
-    /* Styling */
-   
-/* 4 Mei */
-.banner {
-    margin: -1rem;
-
-    h1{
-    font-size: clamp(2rem, 6vw, 5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
 }
 
-/* 4 Mei */
 
-/* Gedenkmuur */
-.gedenkMuur {
-    position: relative;
 
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    .streetSignWrapper {
-        position: absolute;
-        top: 3rem;
-        right: 3rem;
-        background-color: #005AA7;
-        padding: 6px;
-        display: inline-block;
-        border-radius: 10px;
-
-        .streetSign {
-            background-color: #005AA7;
-            color: white;
-            padding: 12px 24px;
-            border: 4px solid white;
-            border-radius: 6px;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-            text-transform: uppercase;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
-    }
-
-    .bloemButtonWrapper {
-        margin: 2rem 0;
-        text-align: center;
-    }
-
-        ul {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-
-            li {
-                position: absolute;
-                bottom: 1rem;
-
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
-            }
-        }
+@media screen and (min-width: 768px) {
+  .homepageContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Gedenkmuur */
+.info,
+.containerabout,
+.peopleCounterContainer {
+  background: var(--header-bg);
+  color: #333;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
 
- .peopleCounterContainer {
-        background: #f6f1ed;
-        color: var(--black);
-        padding: 3rem 2rem;
-        border-radius: 1rem;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      }
-      .peopleCounterContainer h2 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-      }
-      
-      .impact-tekst {
-        font-size: 1.2rem;
-        opacity: 0.8;
-      }
-      
-      
+.info h3,
+.containerabout h2,
+.containerabout h1,
+.peopleCounterContainer h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--link-color);
+}
 
-    .imageLeft,
-    .imageRight {
-        img {
-            width: 100%;
-            height: auto;
-            
-        }
-    }
+.info p,
+.containerabout p,
+.peopleCounterContainer p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
 
-    /* Vanaf 992px en groter (Tablet etc.) */
-    @media screen and (min-width: 992px) {
-        grid-template-columns: 1fr 1fr 1fr;
+.containerabout a{
+  color: var(--main-color);
+  text-decoration: underline;
+  font-weight: bold;
+  padding:.5em;
+  margin-top:2em;
+  text-align: center;
+  border-radius: 0.5em;
+  transition: background-color 0.3s ease;
+}
 
-        .info {
-            grid-column: 1 / span 2;
-            grid-row: 1;
-        }
+.containerabout a:hover {
+  background-color: var(--link-color);
+  color: var(--header-bg);
+  padding:.5em;
+}
 
-        .peopleList {
-            grid-column: 3;
-            grid-row: 1 / span 2;
-        }
+.peopleCounterContainer {
+  text-align: center;
+}
 
-        .imageLeft {
-            grid-column: 1;
-            grid-row: 2;
-        }
+.peopleCounterContainer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--link-color);
+}
 
-        .imageRight {
-            grid-column: 2;
-            grid-row: 2;
-        }
-    }
+.impact-tekst {
+  font-size: 1.2rem;
+  opacity: 0.8;
 }

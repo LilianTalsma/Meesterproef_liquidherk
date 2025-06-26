@@ -3,9 +3,9 @@
   --white: #fff;
 
 
-  --header-bg: #F6F1ED;
+  --header-bg: #f8faff;
   --header-color: var(--black);
-  --link-color: #8B2300;
+  --link-color: #1a1c54;
   --main-bg: var(--header-bg);
 
   --button-bg: var(--main-blauw);
@@ -16,7 +16,9 @@
   --input-br: 10px;
 
   --main-blauw: #273D7C;
-  --secondary-blauw: #B1B9CF;
+  --secondary-blauw: #d8e2ff;
+  --straat-bord: linear-gradient(318deg, rgba(39, 61, 124, 1) 0%, rgb(53, 86, 179) 51%, rgba(39, 61, 124, 1) 100%);
+  --button-hover: linear-gradient(318deg, rgb(53, 86, 179) 0%, rgb(39, 61, 124, 1) 51%, rgb(53, 86, 179) 100%);
 }
 
 html {
@@ -24,9 +26,10 @@ html {
 }
 
 *,
-*::before, *::after {
+*::before,
+*::after {
   box-sizing: border-box;
- }
+}
 
 body {
   display: grid;
@@ -70,14 +73,14 @@ header.header {
   nav.desktopMenu {
     display: none;
 
-    a{
+    a {
       text-decoration: none;
       transition: all 0.3s;
     }
 
     a:hover {
       text-decoration: none;
-      
+
       transform: scale(1.10);
     }
 
@@ -101,84 +104,85 @@ header.header {
   }
 
 
-.mobileMenu {
-  
-
-    display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 90px; /* pas aan op je headerhoogte */
-  right: 1rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  min-width: 220px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(-10px);
-  opacity: 0;
-  pointer-events: none;
-
-}
-
-.mobileMenu a {
-
-  display: block;
-  padding: 0.75rem 0;
-  color: #8b2302;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  border-bottom: 1px solid #e5eaf3;
-
-}
-
-.mobileMenu a:hover {
-  color: #8b2302;
-  text-decoration: underline;
-}
-
-.mobileMenu a:last-child {
-  border-bottom: none;
-}
-
-.mobileMenuLink i {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.mobileMenu.active {
-
-  display: flex;
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media screen and (min-width: 768px) {
   .mobileMenu {
+
+
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    /* pas aan op je headerhoogte */
+    right: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 220px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+
   }
-}
 
+  .mobileMenu a {
 
-footer {
-  background: #212121;
-  color: var(--white);
+    display: block;
+    padding: 0.75rem 0;
+    color: #8b2302;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid #e5eaf3;
 
-  p {
-    text-align: center;
   }
 
-  a {
-    color: #fff;
-    transition: color 0.3s ease;
+  .mobileMenu a:hover {
+    color: #8b2302;
+    text-decoration: underline;
+  }
 
-    &:hover {
-      color: var(--link-color);
+  .mobileMenu a:last-child {
+    border-bottom: none;
+  }
+
+  .mobileMenuLink i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobileMenu.active {
+
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .mobileMenu {
+      display: none;
     }
   }
-}
+
+
+  footer {
+    background: #212121;
+    color: var(--white);
+
+    p {
+      text-align: center;
+    }
+
+    a {
+      color: #fff;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+  }
 }
 
 button,
@@ -192,7 +196,8 @@ a.button {
   transition: background-color 0.3s ease;
   text-decoration: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: var(--button-hover-bg);
   }
 }

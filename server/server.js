@@ -20,7 +20,7 @@ async function fetchTestData() {
   try {
     const filePath = path.resolve('./server/json/details.json');
     const file = await fs.readFile(filePath, 'utf-8');
-    testData = JSON.parse(file); // 👈 store globally
+    testData = JSON.parse(file);
     return testData;
   } catch (error) {
     console.error('Fout bij ophalen van testdata:', error);
@@ -86,7 +86,7 @@ app.get('/print/qr/:id', async (req, res) => {
 });
 
 /* Header pages */
-app.get('/gedenk-posters', async (req, res) => {
+app.get('/herdenk-muur', async (req, res) => {
   const straatSet = new Set(testData.map(item => item.verhaal.straat));
   const straten = Array.from(straatSet);
 
@@ -111,10 +111,10 @@ app.get('/gedenk-posters', async (req, res) => {
     ? testData.filter(item => item.verhaal.straat === selectedStraat)
     : testData;
 
-console.log(numberOfRoses);
+  console.log(numberOfRoses);
 
-  return res.send(renderTemplate('server/views/gedenk-posters.liquid', {
-    title: 'Gedenk-posters',
+  return res.send(renderTemplate('server/views/herdenk-muur.liquid', {
+    title: 'herdenk-muur',
     items: testData,
     straten,
     families,
@@ -170,3 +170,6 @@ app.get('/families', async (req, res) => {
     straatgroepen
   }));
 });
+
+
+
